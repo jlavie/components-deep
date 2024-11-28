@@ -1,4 +1,4 @@
-#dashboard {
+:host {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -8,7 +8,7 @@
   }
   
   @media (min-width: 768px) {
-    #dashboard {
+    :host {
       flex-direction: row;
     }
   }
