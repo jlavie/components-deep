@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
 
 @Component({
@@ -11,6 +11,8 @@ import { DashboardService } from '../dashboard.service';
 
 export class StatusComponent {
   constructor(private dashboardService: DashboardService) {}
+
+  image = output();
 
   get currentStatus() {
     return this.dashboardService.getCurrentStatus();
