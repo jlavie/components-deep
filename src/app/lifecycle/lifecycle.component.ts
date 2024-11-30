@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from "./header/header.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { ExampleComponent } from "./example/example.component";
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-lifecycle',
   standalone: true,
-  templateUrl: './app.component.html',
-  imports: [HeaderComponent, DashboardComponent, LifecycleComponent],
+  imports: [ExampleComponent],
+  templateUrl: './lifecycle.component.html',
+  styleUrl: './lifecycle.component.css',
 })
-export class AppComponent {
+export class LifecycleComponent {
   lifecycleComponentIsVisible = false;
   lifecycleInputText = 'Some Random Number: ' + Math.random() * 100;
 
