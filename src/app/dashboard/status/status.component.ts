@@ -1,4 +1,4 @@
-import { Component, OnInit, output } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, output } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
 
 @Component({
@@ -11,11 +11,16 @@ import { DashboardService } from '../dashboard.service';
 
 export class StatusComponent implements OnInit {
   constructor(private dashboardService: DashboardService) {}
+  private destroyRef = inject(DestroyRef)
 
   ngOnInit() {
-    setInterval(() => {
+    const interval = setInterval(() => {
       this.dashboardService.updateStatus();
     }, 3000)
+
+    this.destroyRef.onDestroy(() => {
+      clearInterval(interval);
+    })
   }
 
   image = output();
