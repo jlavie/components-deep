@@ -6,10 +6,13 @@
     <nav>
       <ul>
         <li>
-          <a href="/">Home</a>
+          <a routerLink="/">Home</a>
         </li>
         <li>
           <a href="/">Management</a>
+        </li>
+        <li>
+          <a routerLink="/lifecycle">Lifecycle</a>
         </li>
         <li>
             <button appButton text="Logout" icon="→"></button>
@@ -17,3 +20,4 @@
       </ul>
     </nav>
   </header>
+  <router-outlet />
