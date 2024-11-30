@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core';
+import { Component, OnInit, output } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
 
 @Component({
@@ -9,8 +9,14 @@ import { DashboardService } from '../dashboard.service';
   styleUrl: './status.component.css'
 })
 
-export class StatusComponent {
+export class StatusComponent implements OnInit {
   constructor(private dashboardService: DashboardService) {}
+
+  ngOnInit() {
+    setInterval(() => {
+      this.dashboardService.getCurrentStatus();
+    }, 3000)
+  }
 
   image = output();
 
