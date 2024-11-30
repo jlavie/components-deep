@@ -14,7 +14,7 @@ export class StatusComponent implements OnInit {
 
   ngOnInit() {
     setInterval(() => {
-      this.dashboardService.getCurrentStatus();
+      this.dashboardService.updateStatus();
     }, 3000)
   }
 

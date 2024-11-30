@@ -15,6 +15,10 @@ export class DashboardService {
     }
 
     getCurrentStatus() {
+        return this.currentStatus;
+    }
+
+    updateStatus() {
         const rnd = Math.random();
         if(rnd < 0.5) {
             this.currentStatus = 'online';
