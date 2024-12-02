@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, OnInit, output } from '@angular/core';
+import { Component, DestroyRef, effect, inject, OnInit, output } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
 
 @Component({
@@ -10,7 +10,12 @@ import { DashboardService } from '../dashboard.service';
 })
 
 export class StatusComponent implements OnInit {
-  constructor(private dashboardService: DashboardService) {}
+  constructor(private dashboardService: DashboardService) {
+    effect(() => {
+      console.log(this.currentStatus());
+    })
+  }
+
   private destroyRef = inject(DestroyRef)
 
   ngOnInit() {
