@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-display',
@@ -9,8 +9,13 @@ import { Component } from '@angular/core';
 })
 export class DisplayComponent {
   // Todo: Implement custom two-way binding
+  size = input.required<{width: string; height: string;}>();
+  sizeChange = output<{width: string; height: string;}>();// la sortie doit avoir le même nom que l'entré + Change
 
   onReset() {
-    // ...
+    this.sizeChange.emit({
+      width: '200',
+      height: '100'
+    })
   }
 }
