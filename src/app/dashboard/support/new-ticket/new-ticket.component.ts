@@ -17,6 +17,9 @@ export class NewTicketComponent implements AfterViewInit, OnInit {
   // @Output() add = new EventEmitter<{title: string; text: string}>();
   add = output<{title: string; text: string}>();
 
+  enteredTitle = '';
+  enteredText = '';
+
   ngOnInit(): void {
     console.log('tout n\'est pas chargé, il n\'est pas garanti que this.form soit renseigné renseigné')
     console.log('n\'est vérifié qu\'avec le décorateur')
@@ -35,5 +38,11 @@ export class NewTicketComponent implements AfterViewInit, OnInit {
 
     // this.form?.nativeElement.reset();
     this.form?.nativeElement.reset();
+  }
+
+  onSubmitWithTwoWayBinding() {
+    this.add.emit({title: this.enteredTitle, text: this.enteredText})
+    this.enteredTitle = '';//grace au 2waybinding, les valeurs seront remises à vide, plus besoin de reset
+    this.enteredText = '';
   }
 }
