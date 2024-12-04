@@ -26,3 +26,15 @@
     font-size: 0.9rem;
     color: #4f4b53;
   }
+  
+ ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 15rem;
+  }
+  
+   li {
+    margin: 0.5rem 0;
+  }
+  
