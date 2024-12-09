@@ -1,10 +1,11 @@
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { TemperaturePipe } from '../shared/pipes/temperature.pipe';
 
 @Component({
   selector: 'app-pipes',
   standalone: true,
-  imports: [DatePipe, DecimalPipe],
+  imports: [DatePipe, DecimalPipe, TemperaturePipe],
   templateUrl: './pipes.component.html',
   styleUrl: './pipes.component.css'
 })
